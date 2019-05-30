@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.bg {
+  background-image: url("http://getwallpapers.com/wallpaper/full/4/0/8/841092-free-download-dark-sky-background-1920x1080.jpg")
+}
+
+/* .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+} */
