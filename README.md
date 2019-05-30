@@ -4,20 +4,13 @@ Created with effort by : Vy
 
 ## View As
 
-https://hoangvy-react-weather.netlify.com/
-
-* Instruction for Netlify error
-
-Grant Location access per mission and allow to load unsafe scripts in the browser, as instructed in the image follows:
-
-![alt text](https://i.imgur.com/mqCIClW.png)
-
+https://hoangvy-react-movie.netlify.com/
 
 ## The following **required** User Stories are completed:
 
 * [x] The user can see the top 20 "Currently Playing" movies on a page.
 * [x] For each movie, the user can see the Movie Title, Year, Rating, and Poster.
-* [ ] The user can see this information clearly on devices of various screen sizes.
+* [x] The user can see this information clearly on devices of various screen sizes.
 * [x] The user can see "more" movies by tapping a "See More" button at the bottom.
 
 
@@ -30,7 +23,7 @@ Grant Location access per mission and allow to load unsafe scripts in the browse
 
 ## Rockets:
 
-* [ ] Pagination: Replace the "See More" with a page control, with a previous and next Button at the end. Click it will move user to the next 20 (or previous 20) movies. Remember at first load, the Previous button should be disabled.
+* [ ] Pagination: Replace the "See More" with a page control, with a previous and next Button at the end. Click it will move user to the next 20 (or previous 20) movies. Remember at first load, the Previous       button should be disabled.
 * [ ] In addition to Previous and Next, use Number Pagination. Click on Number 3 will get them to Page3 and display movies 61st - 79th.
 * [ ] Routing: For each movie, include a link (movie/id) to display the full Movie Info on another page (URL). Use React Router for this. You'll also have to figure out how to retrieve the parameters from the URL.
 
