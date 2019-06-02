@@ -47,13 +47,19 @@ class App extends React.Component {
     const newState = this.setState({genresList: jsonGenresList.genres}, () => console.log("genres list", this.state))
   }
 
+  async search () {
+    const response = await fetch (`https://api.themoviedb.org/3/discover/movie?include_adult=true&api_key=f25b9d6891f4f18bf76a32be085ea114&year=2005&page=${this.state.selectedPagination}&query=${this.state.searchText}`)
+    const jsonData = await response.json()
+    const newState = this.setState ({movies: jsonData.results})
+  }
+
   getMoviePosterUrl (path) {
     return `https://image.tmdb.org/t/p/w500/${path}`
   }
 
   getGenresName (id) {
     for (let i = 0; i < this.state.genresList.length; i++) {
-      if (id == this.state.genresList[i].id) {
+      if (id === this.state.genresList[i].id) {
         id = this.state.genresList[i].name
         console.log("halleluja", id)
       }
@@ -63,6 +69,8 @@ class App extends React.Component {
   handlePagination = selectedPagination => {
     this.setState ({selectedPagination : selectedPagination}, this.getMovieData)
   }
+
+
 
   renderMovies() {
     return this.state.movies.map(({title, release_date, overview, poster_path, vote_average, id}) => {
@@ -80,7 +88,7 @@ class App extends React.Component {
               <ul><li>Rating: {vote_average}</li></ul>
               <ul><li>Genres: {id}</li></ul>
 
-            <Button variant="success">More >></Button>
+            <Button variant="dark">Trailer >></Button>
           </Card.Body>
         </Card>
       )
@@ -94,15 +102,19 @@ class App extends React.Component {
     return (
       <div className="main">
         <Navbar sticky="top" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Home</Navbar.Brand>
+            <Navbar.Brand href="#home">TMDB</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">...</Nav.Link>
+              <Nav.Link href="#home">Genres</Nav.Link>
               <Nav.Link href="#features">...</Nav.Link>
               <Nav.Link href="#pricing">...</Nav.Link>
             </Nav>
+            
             <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-light">Search</Button>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" value={this.state.searchText} onChange={(e) => {
+            this.setState({ searchText: e.target.value })
+            console.log("heyyyy",e.target.value)
+            }}/>
+              <Button variant="outline-light" onClick={this.search}>Search</Button>
             </Form>
           </Navbar>
         <Container>
