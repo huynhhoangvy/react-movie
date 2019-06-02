@@ -36,9 +36,13 @@
   background-image: url("http://getwallpapers.com/wallpaper/full/4/0/8/841092-free-download-dark-sky-background-1920x1080.jpg")
 }
 
-/* .wrapper {
-  display: grid;
+#movieCards {
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 0 32%; */
+  /* display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-} */
+  grid-auto-rows: minmax(100px, auto); */
+}
