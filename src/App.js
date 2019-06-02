@@ -92,7 +92,7 @@ class App extends React.Component {
     console.log(this.state.movies.length)
     console.log(this.state)
     return (
-      <div>
+      <div className="main">
         <Navbar sticky="top" bg="dark" variant="dark">
             <Navbar.Brand href="#home">Home</Navbar.Brand>
             <Nav className="mr-auto">
@@ -113,7 +113,6 @@ class App extends React.Component {
 
           {/* <button onClick={this.getMovieData}>Get more movies</button> */}
           {/* bind #3 */}
-          <Button onClick={() => this.getMovieData()}>Get more movies</Button>
           {/* <PaginationComponent totalItems={50} pageSize={5} onSelect={this.handleSelected} /> */}
           <PaginationComponent totalItems={15} pageSize={1} onSelect={this.handlePagination} maxPaginationNumbers={5}/>
 
