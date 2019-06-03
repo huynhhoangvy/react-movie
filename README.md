@@ -29,7 +29,7 @@ https://hoangvy-react-movie.netlify.com/
 
 ## Time Spent
 
-Time spent: **4** hours spent in total.
+Time spent: **8** hours spent in total.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
